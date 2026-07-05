@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0b0f0d;
+  color: #eaf2ed;
+}
+
+::selection {
+  background-color: #2fbf71;
+  color: #080b09;
+}
+
+/* Signature element: "inventory slot" bevel border, echoing Minecraft's GUI
+   slots without being literal pixel-art. Used on cards, buttons, portraits. */
+.slot {
+  position: relative;
+  border-radius: 6px;
+  border: 1px solid rgba(47, 191, 113, 0.25);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.25));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+    0 1px 0 rgba(0, 0, 0, 0.4);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.slot:hover {
+  border-color: rgba(47, 191, 113, 0.6);
+  transform: translateY(-3px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+    0 10px 30px -12px rgba(47, 191, 113, 0.35);
+}
+
+.slot-gold:hover {
+  border-color: rgba(232, 180, 76, 0.65);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+    0 10px 30px -12px rgba(232, 180, 76, 0.35);
+}
+
+/* Terrain divider: a stepped silhouette between sections, echoing block terrain */
+.terrain-divider {
+  height: 28px;
+  width: 100%;
+  background: #0b0f0d;
+  clip-path: polygon(
+    0% 100%, 0% 40%, 6% 40%, 6% 20%, 12% 20%, 12% 0%,
+    88% 0%, 88% 20%, 94% 20%, 94% 40%, 100% 40%, 100% 100%
+  );
+}
+
+.container-px {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-px {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #1f8c52;
+  border-radius: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #131a16;
+}
