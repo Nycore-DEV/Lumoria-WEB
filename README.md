@@ -1,4 +1,4 @@
-# Template Website Server Minecraft
+# Website Lumoria SMP - Minecraft Server
 
 Website resmi server Minecraft: landing page premium bertema dark/gaming, ditambah
 panel admin untuk mengelola seluruh konten tanpa menyentuh kode.
